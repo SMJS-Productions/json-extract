@@ -9,11 +9,6 @@ inputs:
     description: The paths or path to extract from the JSON string (e.g. '["path.to.value"]')
     required: true
 
-outputs:
-  values:
-    description: The extracted values
-    value: ${{ steps.extract-json.outputs }}
-
 runs:
   using: node20
   main: dist/index.js
