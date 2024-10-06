@@ -1,0 +1,19 @@
+name: JSON extract
+description: Extracts information from a JSON string
+
+inputs:
+  json:
+    description: The JSON string to extract information from
+    required: true
+  paths:
+    description: The paths or path to extract from the JSON string (e.g. '["path.to.value"]')
+    required: true
+
+outputs:
+  values:
+    description: The extracted values
+    value: ${{ steps.extract-json.outputs }}
+
+runs:
+  using: node20
+  main: dist/index.js
